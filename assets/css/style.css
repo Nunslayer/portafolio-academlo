@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --font-primary: #34b0be;
+    --secundary: #d1ceca;
+    --font-secundary: #fff;
+    --primary: #242635;
+    --main-color:#01041afa;
+    font-family: 'Montserrat', sans-serif;
+    --titulo-size:36px;
+    --subtitulo-size: 24px;
+    --subsection-size: 16px;
+}
+html {
+    height: 100%;
+    width: 100%;
+}
+body {
+    background-color: var(--main-color);
+    min-height: 100%;
+    color: var(--font-secundary);
+    font-size: 16px;
+}
+.contenedor-principal{
+    display: grid;
+    grid-template-areas:
+    "header" 
+    "main"   
+    "footer";
+}
+.subcontenedor {
+    min-height: 300px;
+    min-width: 260px;
+    max-width: 380px;
+}
+.header {
+    position: relative;
+    grid-area: header;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.contenedor-perfil {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    z-index: 0;
+    background-color: var(--primary);
+    border-radius: 50%;
+    top: 40px;
+    right: 15%;
+    background-image: url(../images/perfil.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.section-header {
+    margin-top: 27px;
+    display: flex;
+    flex-direction: column;
+    min-width: 40%; 
+    z-index: 50;
+}
+
+.section-header.dos>h2:first-child{
+    color: var(--font-primary);
+    font-weight: 600;
+}
+.section-header.uno>h2:first-child{
+    font-size: var(--subtitulo-size);
+    font-weight: 400;
+}
+
+.section-header.tres {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:5%;
+    width: 100%;
+    height: 25%;
+    margin: 0;
+    background-color: var(--primary);
+    border-radius: 10px;
+    align-self: flex-end;
+    padding: 5% 10%;
+}
+.contenedor-referencias {
+    width: auto;
+    max-width: 90px;
+    height: auto;
+    flex-grow: 1;
+    background-color: var(--font-secundary);
+    border-radius: 15%;
+    background-image: url(../images/akar-icons_google-fill.png);
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position: center;
+}
+.contenedor-referencias:nth-child(2){
+    background-image: url(../images/ant-design_amazon-outlined.png);
+}
+.contenedor-referencias:nth-child(3){
+    background-image: url(../images/bi_spotify.png);
+}
+.section-header > h2 {
+    font-size: var(--subsection-size);
+    font-weight: 400;
+    padding-left: 0.15rem;
+}
+.section-header > h1 {
+    font-size: var(--titulo-size);
+    color: var(--font-primary);
+    font-weight: 600;
+    border-bottom: 0.1rem solid #fff; 
+    margin: 0.5rem 0;  
+}
+
+.contenedor-redes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+    
+}
+.redes {
+    background-color: var(--secundary);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-image: url(../íconos/cib_linkedin-in.svg);
+    background-size: 19px 19px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.redes:nth-child(2){
+    background-image: url(../íconos/ant-design_instagram-filled.svg);
+}
+.redes:nth-child(3){
+    background-image: url(../íconos/ant-design_twitter-outlined.svg);
+}
+.main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+.subsection{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+
+}
+.subsection >p{
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.subsection > h2 {
+    color: var(--font-primary);
+    text-align: center;
+}
+.subsection.servicios{
+    width: 100%;
+}
+
+.slider-servicios {
+    width: 60%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider-servicios ul {
+    padding: 0;
+    display: flex;
+    width: 300%;
+    gap: 2%;
+    animation: cambio 10s infinite;
+}
+
+.slider-servicios li {
+    width: 100%;
+    height: 250px;
+    padding: 0 2px;
+    text-align: center;
+    list-style: none;
+    border-radius: 10px;
+    background-color: var(--font-secundary);
+}
+.slider-servicios img{
+    width: 70%;
+}
+.slider-servicios h2{
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    margin: 5px 0;
+    
+}
+
+.slider-servicios p {
+    color:var(--secundary) ;
+    text-align: center;
+    font-size: 16px;
+}
+
+@keyframes cambio {
+    0% { margin-left: 0;}
+    25% { margin-left: 0;}
+
+    35% { margin-left: -100%;}
+    60% { margin-left: -100%;}
+
+    75% { margin-left: -200%;}
+    100% { margin-left: -200%;}
+    
+}
+
+.subcontenedor.mis-habilidades {
+    width: 100%;
+}
+
+.skills {
+    padding: 1em 0;
+}
+
+.skills-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.skills-bar {
+    width: 175px;
+    height: 8px;
+    background-color:var(--font-secundary);
+    border-radius: 3px;
+}
+
+.skills-progress {
+    width: 80%;
+    height: 8px;
+    background-color: var(--font-primary);
+    border-radius: 3px;
+}
+
+.subsection.mi-portafolio {
+    width: 100%;
+}
+
+.slider-portafolio {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+.slider-portafolio ul {
+    padding: 0;
+    display: flex;
+    width: 400%;
+    animation: cambioPortafolio 10s infinite;
+}
+
+.slider-portafolio li {
+    width: 100%;
+    text-align: center;
+    list-style: none;
+}
+.slider-portafolio img{
+    width: 100%;
+}
+
+@keyframes cambioPortafolio {
+    0% { margin-left: 0;}
+    20% { margin-left: 0;}
+
+    25% { margin-left: -100%;}
+    45% { margin-left: -100%;}
+
+    50% { margin-left: -200%;}
+    70% { margin-left: -200%;}
+
+    75% { margin-left: -300%;}
+    95% { margin-left: -300%;}
+    
+    100% { margin-left: 0;}
+}
+
+.subcontenedor.footer {
+    background-color: var(--primary);
+    min-height: 100px;
+}
